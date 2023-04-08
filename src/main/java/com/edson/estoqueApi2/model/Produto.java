@@ -2,7 +2,8 @@ package com.edson.estoqueApi2.model;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -82,14 +83,16 @@ public class Produto {
     }
 
     public void setUnidade(Unidade unidade) {
+
         this.unidade = unidade;
     }
 
-    public boolean isAtiva() {
+    public boolean isAtiva()  {
         return ativa;
     }
 
     public void setAtiva(boolean ativa) {
+
         this.ativa = ativa;
     }
 
