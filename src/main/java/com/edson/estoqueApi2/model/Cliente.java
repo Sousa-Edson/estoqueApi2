@@ -27,6 +27,9 @@ public class Cliente {
     @NotBlank(message = "O inscricao estadual não pode ser em branco")
     private String inscricaoEstadual;
 
+    public Cliente() {
+    }
+
     public Cliente(String nome, String cnpj, String endereco, String telefone, String inscricaoEstadual) {
         this.nome = nome;
         this.cnpj = cnpj;

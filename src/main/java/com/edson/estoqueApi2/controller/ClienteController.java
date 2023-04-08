@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +30,16 @@ public class ClienteController {
     public Cliente adicionar(@RequestBody Cliente cliente) {
         return clienteRepository.save(cliente);
     }
+
+//    @PostMapping
+//    public ResponseEntity<Cliente> criarCliente(@RequestBody Cliente cliente, UriComponentsBuilder uriBuilder) {
+//        Cliente novoCliente = clienteRepository.save(cliente);
+//
+//        URI uri = uriBuilder.path("/clientes/{id}").buildAndExpand(novoCliente.getId()).toUri();
+//
+//        return ResponseEntity.created(uri).body(novoCliente);
+//    }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Cliente> buscar(@PathVariable Long id) {
